@@ -5,6 +5,7 @@
     <title>JUNO Hotel & Resort</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
 </head>
 <body>
 
@@ -12,7 +13,9 @@
     <header class="hero">
         <div class="topbar" id="navbar">
             <img src="./assets/carousel/logo.png" alt="Juno Logo" class="logo">
-            <a href="#" class="login-link">Log In</a>
+            <a href="login.php" class="login-link">
+              <span class="material-symbols-outlined">person</span> Log In
+            </a>
         </div>
         <div class="hero-text">
             <h1>Make your stay <br> memorable</h1>
