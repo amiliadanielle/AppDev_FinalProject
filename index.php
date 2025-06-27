@@ -43,25 +43,29 @@
         <h2>Facilities</h2>
         <p>Manila explored from JUNO Hotel is a place of new experiences and life-affirming adventures.</p>
         <div class="facility-grid">
-            <div class="facility-card">
-                <img src="assets/images/pool.jpg" alt="Pool" class="facility-img">
-                <h3>Pool</h3>
-                <p>Dive into serenity in our illuminated outdoor pool.</p>
+            <div class="facility-card" style="background-image: url('assets/images/pool.jpg');">
+                <div class="facility-overlay">
+                    <h3>Pool</h3>
+                    <p>Dive into serenity at our illuminated outdoor pool, surrounded by lush palms and luxurious cabanas – the perfect escape day or night.</p>
+                </div>
             </div>
-            <div class="facility-card">
-                <img src="assets/images/gym.jpg" alt="Fitness Gym" class="facility-img">
-                <h3>Fitness Gym</h3>
-                <p>Stay energized with state-of-the-art equipment.</p>
+            <div class="facility-card" style="background-image: url('assets/images/gym.jpg');">
+                <div class="facility-overlay">
+                    <h3>Fitness Gym</h3>
+                    <p>Stay energized in our state-of-the-art fitness center equipped with modern machines and a calming ambiance to elevate your workout experience.</p>
+                </div>
             </div>
-            <div class="facility-card">
-                <img src="assets/images/spa.jpg" alt="Spa" class="facility-img">
-                <h3>Spa</h3>
-                <p>Rejuvenate with a tranquil spa experience.</p>
+            <div class="facility-card" style="background-image: url('assets/images/spa.jpg');">
+                <div class="facility-overlay">
+                    <h3>Spa</h3>
+                    <p>Rejuvenate your senses at the Juno Spa, where expert therapists and tranquil surroundings offer a sanctuary of relaxation and renewal.</p>
+                </div>
             </div>
-            <div class="facility-card">
-                <img src="assets/images/cafe.jpg" alt="Café" class="facility-img">
-                <h3>Café</h3>
-                <p>Savor artisanal flavors in our cozy café.</p>
+            <div class="facility-card" style="background-image: url('assets/images/cafe.jpg');">
+                <div class="facility-overlay">
+                    <h3>Café</h3>
+                    <p>Savor artisanal flavors at our cozy café, serving freshly brewed coffee, gourmet pastries, and light bites in a stylish, welcoming setting.</p>
+                </div>
             </div>
         </div>
     </section>

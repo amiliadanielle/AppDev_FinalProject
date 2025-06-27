@@ -142,22 +142,13 @@ body {
 
 .facility-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 20px; /* reduce spacing between cards */
     margin-top: 30px;
-    padding: 0 40px;
-}
-
-.facility-card {
-    background-color: #1e1e1e;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    height: 400px; /* Set a fixed height for square-ish shape */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 0 10px; /* reduce side padding */
+    max-width: 900px; /* limit total grid width */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .facility-img {
@@ -166,6 +157,63 @@ body {
     object-fit: cover;
     border-radius: 8px;
 }
+
+.facility-card {
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.facility-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.facility-overlay h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: "Libre Baskerville", serif;
+}
+
+.facility-overlay p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+/* Background images for each card */
+.facility-card.pool {
+    background-image: url('../images/pool.jpg');
+}
+
+.facility-card.gym {
+    background-image: url('../images/gym.jpg');
+}
+
+.facility-card.spa {
+    background-image: url('../images/spa.jpg');
+}
+
+.facility-card.cafe {
+    background-image: url('../images/cafe.jpg');
+}
+
 
 /* Mission & Vision */
 .mission-vision {
