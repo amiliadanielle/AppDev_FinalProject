@@ -2,20 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JUNO Hotel & Resort</title>
+    <title>JUNO Hotel</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
 </head>
 <body>
 
-    <!-- Header with background image -->
     <header class="hero">
         <div class="topbar" id="navbar">
-            <img src="./assets/carousel/logo.png" alt="Juno Logo" class="logo">
-            <a href="login.php" class="login-link">
-              <span class="material-symbols-outlined">person</span> Log In
+            <a href="../index.php">
+              <img src="assets/images/logo.png" alt="Juno Logo" class="logo">
             </a>
+
+            <div class="nav-links">
+                <a href="pages/about.php" class="about-link">About Us</a>
+                <a href="login.php" class="login-link">
+                    <span class="material-symbols-outlined">person</span> Log In
+                </a>
+            </div>
         </div>
         <div class="hero-text">
             <h1>Make your stay <br> memorable</h1>
@@ -26,7 +34,7 @@
                 exceptional service, and convenient access to Manila’s vibrant attractions.
                 Experience the warmth of Filipino hospitality and discover a sanctuary where every detail is crafted for your utmost comfort and satisfaction.
             </p>
-            <a href="#" class="hero-button">More about Juno</a>
+            <a href="./pages/about.php" class="hero-button">More about Juno</a>
         </div>
     </header>
 
@@ -45,7 +53,7 @@
     <!-- Mission & Vision -->
     <section class="mission-vision">
         <div class="mission">
-            <img src="./assets/carousel/mission.jpg" alt="Mission Image">
+            <img src="./assets/images/mission.jpg" alt="Mission Image">
             <div>
                 <h2>Our Mission</h2>
                 <p>
@@ -61,14 +69,14 @@
                     To be the premier destination for luxury and serenity in the heart of the city, known for our impeccable service, breathtaking ambiance, and unforgettable guest experiences.
                 </p>
             </div>
-            <img src="./assets/carousel/vision.jpg" alt="Vision Image">
+            <img src="./assets/images/vision.jpg" alt="Vision Image">
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-left">
-            <img src="./assets/carousel/junologo.png" alt="Juno Footer Logo">
+            <img src="./assets/images/junologo.png" alt="Juno Footer Logo">
             <p>© 2025 Juno Hotel. All rights reserved.</p>
         </div>
         <div class="footer-right">
