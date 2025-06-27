@@ -39,16 +39,33 @@
     </header>
 
     <!-- Facilities Section -->
-    <section class="facilities">
+   <section class="facilities">
         <h2>Facilities</h2>
         <p>Manila explored from JUNO Hotel is a place of new experiences and life-affirming adventures.</p>
         <div class="facility-grid">
-            <div class="facility-card"><h3>Pool</h3><p>Dive into serenity in our illuminated outdoor pool.</p></div>
-            <div class="facility-card"><h3>Fitness Gym</h3><p>Stay energized with state-of-the-art equipment.</p></div>
-            <div class="facility-card"><h3>Spa</h3><p>Rejuvenate with a tranquil spa experience.</p></div>
-            <div class="facility-card"><h3>Café</h3><p>Savor artisanal flavors in our cozy café.</p></div>
+            <div class="facility-card">
+                <img src="assets/images/pool.jpg" alt="Pool" class="facility-img">
+                <h3>Pool</h3>
+                <p>Dive into serenity in our illuminated outdoor pool.</p>
+            </div>
+            <div class="facility-card">
+                <img src="assets/images/gym.jpg" alt="Fitness Gym" class="facility-img">
+                <h3>Fitness Gym</h3>
+                <p>Stay energized with state-of-the-art equipment.</p>
+            </div>
+            <div class="facility-card">
+                <img src="assets/images/spa.jpg" alt="Spa" class="facility-img">
+                <h3>Spa</h3>
+                <p>Rejuvenate with a tranquil spa experience.</p>
+            </div>
+            <div class="facility-card">
+                <img src="assets/images/cafe.jpg" alt="Café" class="facility-img">
+                <h3>Café</h3>
+                <p>Savor artisanal flavors in our cozy café.</p>
+            </div>
         </div>
     </section>
+
 
     <!-- Mission & Vision -->
     <section class="mission-vision">
