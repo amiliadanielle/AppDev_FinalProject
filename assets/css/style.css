@@ -64,8 +64,31 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding-right: 10px;
 }
+
+.nav-links a,
+.nav-links span {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8E1616;
+    opacity: 0.9;
+}
+
+.nav-username {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
 
 .about-link {
     color: white;

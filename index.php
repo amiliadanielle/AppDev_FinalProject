@@ -11,35 +11,37 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 
-    <header class="hero" id="about">
-        <div class="topbar" id="navbar">
-            <a href="index.php">
-              <img src="assets/images/logo.png" alt="Juno Logo" class="logo">
-            </a>
+<header class="hero" id="about">
+    <div class="topbar" id="navbar">
+        <a href="index.php">
+            <img src="assets/images/logo.png" alt="Juno Logo" class="logo">
+        </a>
 
-            <div class="nav-links">
-                <a href="pages/about.php" class="about-link">About Us</a>
+        <div class="nav-links">
+            <a href="pages/about.php" class="about-link">About Us</a>
 
-                <?php if (isset($_SESSION["username"])): ?>
-                    <span style="color: white; font-weight: 500;">Hello, <?= htmlspecialchars($_SESSION["username"]) ?></span>
-                    <a href="pages/booking.php" class="about-link">Book</a>
-                    <a href="pages/logout.php" class="login-link">
-                        <span class="material-symbols-outlined">person</span> Log Out
-                    </a>
-                <?php else: ?>
-                    <a href="pages/login.php" class="login-link">
-                        <span class="material-symbols-outlined">person</span> Log In
-                    </a>
-                <?php endif; ?>
-            </div>
+            <?php if (isset($_SESSION["username"])): ?>
+                <span class="nav-username" style="color: white; font-weight: 500;">
+                    Hello, <?= htmlspecialchars($_SESSION["username"]) ?>
+                </span>
+                <a href="pages/booking.php" class="about-link">Book</a>
+                <a href="process/logout.php" class="login-link">
+                    <span class="material-symbols-outlined">person</span> Log Out
+                </a>
+            <?php else: ?>
+                <a href="pages/login.php" class="login-link">
+                    <span class="material-symbols-outlined">person</span> Log In
+                </a>
+            <?php endif; ?>
         </div>
+    </div>
 
-        <div class="hero-text">
-            <section class="reveal">
+    <div class="hero-text">
+        <section class="reveal">
             <h1>Make your stay <br> memorable</h1>
             <p>
                 Welcome to JUNO Hotel, your perfect urban oasis located in the heart of Manila, Philippines.
@@ -49,11 +51,12 @@ session_start();
                 Experience the warmth of Filipino hospitality and discover a sanctuary where every detail is crafted for your utmost comfort and satisfaction.
             </p>
             <a href="./pages/about.php" class="hero-button">More about Juno</a>
-        </div>
-    </header>
+        </section>
+    </div>
+</header>
 
-    <!-- Facilities Section -->
-   <section class="facilities">
+<!-- Facilities Section -->
+<section class="facilities">
     <section class="reveal">
         <h2>Facilities</h2>
         <p>Manila explored from JUNO Hotel is a place of new experiences and life-affirming adventures.</p>
@@ -84,47 +87,50 @@ session_start();
             </div>
         </div>
     </section>
+</section>
 
-    <!-- Mission & Vision -->
-    <section class="mission-vision">
-        <div class="mission">
-            <img src="./assets/images/mission.jpg" alt="Mission Image">
-            <div>
-                <section class="reveal">
+<!-- Mission & Vision -->
+<section class="mission-vision">
+    <div class="mission">
+        <img src="./assets/images/mission.jpg" alt="Mission Image">
+        <div>
+            <section class="reveal">
                 <h2>Our Mission</h2>
                 <p>
                     At Juno Hotel, our mission is to provide an exceptional hospitality experience that blends elegance, comfort, and personalized service.
                     We are committed to creating a tranquil escape where every guest feels valued, relaxed, and inspired.
                 </p>
-            </div>
+            </section>
         </div>
-        <div class="vision">
-            <div>
-                <section class="reveal">
+    </div>
+    <div class="vision">
+        <div>
+            <section class="reveal">
                 <h2>Our Vision</h2>
                 <p>
                     To be the premier destination for luxury and serenity in the heart of the city, known for our impeccable service, breathtaking ambiance, and unforgettable guest experiences.
                 </p>
-            </div>
-            <img src="./assets/images/vision.jpg" alt="Vision Image">
+            </section>
         </div>
-    </section>
+        <img src="./assets/images/vision.jpg" alt="Vision Image">
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-left">
-            <img src="./assets/images/junologo.png" alt="Juno Footer Logo">
-            <p>© 2025 Juno Hotel. All rights reserved.</p>
-        </div>
-        <div class="footer-right">
-            <p><a href="#">Contact Us</a></p>
-            <p>📞 <u><a href="tel:+63281234567">(02) 8123 4567</a></u></p>
-            <p>✉️ <u><a href="mailto:info@junohotel.com">info@junohotel.com</a></u></p>
-            <p><a href="pages/about.php#about">About Us</a></p>
-            <p><a href="pages/about.php#faqs">FAQs</a></p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer>
+    <div class="footer-left">
+        <img src="./assets/images/junologo.png" alt="Juno Footer Logo">
+        <p>© 2025 Juno Hotel. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+        <p><a href="#">Contact Us</a></p>
+        <p>📞 <u><a href="tel:+63281234567">(02) 8123 4567</a></u></p>
+        <p>✉️ <u><a href="mailto:info@junohotel.com">info@junohotel.com</a></u></p>
+        <p><a href="pages/about.php#about">About Us</a></p>
+        <p><a href="pages/about.php#faqs">FAQs</a></p>
+    </div>
+</footer>
 
-    <script src="./assets/js/main.js"></script>
+<script src="./assets/js/main.js"></script>
 </body>
 </html>
