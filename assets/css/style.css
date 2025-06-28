@@ -131,6 +131,12 @@ body {
     border-radius: 5px;
 }
 
+.hero-button:hover {
+    background-color: #c69c2b;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(30px);
