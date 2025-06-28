@@ -132,7 +132,8 @@ html {
 /* FAQs Section */
 .faqs {
     background-color: #F8EEDF;
-    padding: 60px 90px;
+    padding: 120px 120px;
+    padding-bottom: 50px;
 }
 
 .faqs h2 {
