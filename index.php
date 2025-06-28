@@ -26,6 +26,7 @@
             </div>
         </div>
         <div class="hero-text">
+            <section class="reveal">
             <h1>Make your stay <br> memorable</h1>
             <p>
                 Welcome to JUNO Hotel, your perfect urban oasis located in the heart of Manila, Philippines.
@@ -40,6 +41,7 @@
 
     <!-- Facilities Section -->
    <section class="facilities">
+    <section class="reveal">
         <h2>Facilities</h2>
         <p>Manila explored from JUNO Hotel is a place of new experiences and life-affirming adventures.</p>
         <div class="facility-grid">
@@ -76,6 +78,7 @@
         <div class="mission">
             <img src="./assets/images/mission.jpg" alt="Mission Image">
             <div>
+                <section class="reveal">
                 <h2>Our Mission</h2>
                 <p>
                     At Juno Hotel, our mission is to provide an exceptional hospitality experience that blends elegance, comfort, and personalized service.
@@ -85,6 +88,7 @@
         </div>
         <div class="vision">
             <div>
+                <section class="reveal">
                 <h2>Our Vision</h2>
                 <p>
                     To be the premier destination for luxury and serenity in the heart of the city, known for our impeccable service, breathtaking ambiance, and unforgettable guest experiences.

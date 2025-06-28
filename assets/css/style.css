@@ -131,6 +131,18 @@ body {
     border-radius: 5px;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 /* Facilities Section */
 .facilities {
     text-align: center;
