@@ -251,6 +251,11 @@ body {
 
 }
 
+.mission p{
+    text-align: left;
+    font-size: larger;
+}
+
 .mission img{
     margin-left: 60px;
     width: 500px;
@@ -282,6 +287,11 @@ body {
     text-align: right;
 }
 
+.vision p{
+    text-align: right;
+    font-size: larger;
+}
+
 /* Footer Styling*/
 footer {
     background-color: #841c1c;
@@ -298,8 +308,13 @@ footer a {
     margin-right: 100px;
 }
 
+footer a:hover {
+    color: #c69c2b;
+}
+
 footer p {
     margin-left: 80px;
+    text-align: left;
 }
 
 .footer-left img {
