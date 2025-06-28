@@ -77,6 +77,15 @@ html {
     color: white;
 }
 
+.input-group {
+    margin-bottom: 25px; 
+}
+
+.login-link a {
+    padding-bottom: 12px;
+    color: white;
+}
+
 
 /* Hero Section */
 .hero {
