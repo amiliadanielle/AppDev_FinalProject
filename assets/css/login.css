@@ -112,7 +112,7 @@ html {
 }
 
 .topbar.scrolled {
-    background-color: #8E1616;
+    background-color: #c69c2b;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     
 }
@@ -137,7 +137,7 @@ html {
 }
 
 .nav-links a:hover {
-    color: #c69c2b;
+    color: #8E1616;
 }
 
 
