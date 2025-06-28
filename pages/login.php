@@ -25,12 +25,19 @@
         </div>
     </div>
 
-    <form class="login-form" method="POST" action="../process/login_process.php">
-      <h2>Log In</h2>
-      <input type="text" name="username_email" placeholder="Username/Email" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <p class="signup-link">Don’t have an account? <a href="../pages/signup.php">Sign up</a></p>
-    <button type="submit" name="login">Log In</button>
+    <<form class="login-form">
+    <h2>Log In</h2>
+
+    <div class="input-group">
+        <input type="text" placeholder="Name" name="name">
+    </div>
+
+    <div class="input-group">
+        <input type="text" placeholder="Contact Number" name="contact">
+    </div>
+
+      <p class="login-link">Don’t have an account? <a href="../pages/signup.php">Sign up</a></p>
+    <button type="submit" name="login" a href="#">Log In</button>
 </form>
 
 </header>
