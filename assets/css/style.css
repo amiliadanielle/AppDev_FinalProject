@@ -81,7 +81,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    background: url('../images/landingpagebg.png') center/cover no-repeat;
+    background: url('../images/indexbg.avif') center/cover no-repeat;
     color: white;
     padding: 140px 0px;
 }
