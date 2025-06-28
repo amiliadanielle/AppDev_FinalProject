@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,17 +17,27 @@
 
     <header class="hero" id="about">
         <div class="topbar" id="navbar">
-            <a href="../index.php">
+            <a href="index.php">
               <img src="assets/images/logo.png" alt="Juno Logo" class="logo">
             </a>
 
             <div class="nav-links">
                 <a href="pages/about.php" class="about-link">About Us</a>
-                <a href="pages/login.php" class="login-link">
-                    <span class="material-symbols-outlined">person</span> Log In
-                </a>
+
+                <?php if (isset($_SESSION["username"])): ?>
+                    <span style="color: white; font-weight: 500;">Hello, <?= htmlspecialchars($_SESSION["username"]) ?></span>
+                    <a href="pages/booking.php" class="about-link">Book</a>
+                    <a href="pages/logout.php" class="login-link">
+                        <span class="material-symbols-outlined">person</span> Log Out
+                    </a>
+                <?php else: ?>
+                    <a href="pages/login.php" class="login-link">
+                        <span class="material-symbols-outlined">person</span> Log In
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
+
         <div class="hero-text">
             <section class="reveal">
             <h1>Make your stay <br> memorable</h1>
@@ -72,7 +85,6 @@
         </div>
     </section>
 
-
     <!-- Mission & Vision -->
     <section class="mission-vision">
         <div class="mission">
@@ -113,8 +125,6 @@
         </div>
     </footer>
 
-     <script src="./assets/js/main.js"></script>
-    
-
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
