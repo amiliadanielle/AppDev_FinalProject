@@ -161,6 +161,7 @@ body {
     font-size: 2em;
     margin-bottom: 10px;
     text-align: center;
+    padding-top: 70px;
 }
 
 .facility-grid {
@@ -168,10 +169,11 @@ body {
     grid-template-columns: repeat(2, 1fr); 
     gap: 20px; 
     margin-top: 30px;
-    padding: 0 10px;
     max-width: 900px; 
     margin-left: auto;
     margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 80px;
 }
 
 .facility-img {
@@ -242,8 +244,10 @@ body {
 .mission-vision {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 30px;
     padding: 60px 40px;
+    margin: 90px;
+    align-items: center;
 }
 
 .mission {
