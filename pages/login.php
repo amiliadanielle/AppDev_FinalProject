@@ -29,7 +29,7 @@
       <h2>Log In</h2>
       <input type="text" name="username_email" placeholder="Username/Email" required>
       <input type="password" name="password" placeholder="Password" required>
-      <p class="signup-link">Don’t have an account? <a href="#">Sign up</a></p>
+      <p class="signup-link">Don’t have an account? <a href="../pages/signup.php">Sign up</a></p>
     <button type="submit" name="login">Log In</button>
 </form>
 
