@@ -25,7 +25,7 @@ html {
 }
 
 .topbar.scrolled {
-    background-color: #8E1616;
+    background-color: #c69c2b;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     
 }
@@ -43,11 +43,11 @@ html {
     align-items: center;
     gap: 8px; 
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .login-link:hover {
-    color: #c69c2b;
-    opacity: 0.9;
+    color: #8E1616;
 }
 
 
@@ -71,11 +71,11 @@ html {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .home-link:hover {
-    color: #c69c2b;
-    opacity: 0.9;
+    color: #8E1616;
 }
 
 
