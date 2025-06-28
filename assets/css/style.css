@@ -259,7 +259,7 @@ body {
 
 .mission p{
     text-align: left;
-    font-size: larger;
+    font-size: 17px;
 }
 
 .mission img{
@@ -295,7 +295,7 @@ body {
 
 .vision p{
     text-align: right;
-    font-size: larger;
+    font-size: 17px;
 }
 
 /* Footer Styling*/
