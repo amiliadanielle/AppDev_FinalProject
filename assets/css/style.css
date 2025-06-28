@@ -152,7 +152,6 @@ body {
 /* Facilities Section */
 .facilities {
     text-align: center;
-    padding: 60px 20px;
 }
 
 .facilities h2 {
@@ -164,18 +163,18 @@ body {
 
 .facility-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-    gap: 20px; /* reduce spacing between cards */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
     margin-top: 30px;
-    padding: 0 10px; /* reduce side padding */
-    max-width: 900px; /* limit total grid width */
+    padding: 0 10px;
+    max-width: 900px; 
     margin-left: auto;
     margin-right: auto;
 }
 
 .facility-img {
     width: 100%;
-    height: 300px; /* Adjust height to make it more square */
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -249,7 +248,7 @@ body {
     display: flex;
     gap: 30px;
     align-items: center;
-    margin: 80px;
+
 }
 
 .mission img{
