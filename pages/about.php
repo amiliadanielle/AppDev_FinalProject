@@ -12,7 +12,7 @@
 </head>
 <body>
     
-    <header class="hero">
+    <header class="hero" id="about">
         <div class="topbar" id="navbar">
             <a href="../index.php">
               <img src="../assets/images/logo.png" alt="Juno Logo" class="logo">
@@ -38,7 +38,7 @@
     </header>
 
     <!-- FAQs Section -->
-    <section class="faqs">
+    <section class="faqs" id="faqs">
         <h2>FAQs</h2>
         <div class="faq-columns">
             <div class="faq-column">
@@ -113,8 +113,9 @@
             <p><a href="#">Contact Us</a></p>
             <p>📞 <u><a href="tel:+63281234567">(02) 8123 4567</a></u></p>
             <p>✉️ <u><a href="mailto:info@junohotel.com">info@junohotel.com</a></u></p>
-            <p><a href="#">About Us</a></p>
-            <p><a href="#">FAQs</a></p>
+            <p><a href="#about">About Us</a></p>
+            <p><a href="#faqs">FAQs</a></p>
+
         </div>
     </footer>
 

@@ -4,6 +4,10 @@ body {
     background-color: #f5efdf;
     color: #1e1e1e;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* Topbar Styles */
 .topbar {
@@ -81,7 +85,7 @@ body {
     position: relative;
     background: url('../images/vision.jpg') center/cover no-repeat;
     color: white;
-    padding: 140px 0px;
+    padding: 165px 0px;
 }
 
 .hero::before {
