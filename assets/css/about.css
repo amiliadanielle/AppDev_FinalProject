@@ -126,12 +126,13 @@ body {
 
 /* FAQs Section */
 .faqs {
-    background-color: #fff;
+    background-color: #F8EEDF;
     padding: 60px 90px;
-    color: #1e1e1e;
 }
 
 .faqs h2 {
+    font-family: "Libre Baskerville", serif;
+    color: #8E1616;
     font-size: 2em;
     margin-bottom: 30px;
     text-align: center;
@@ -149,10 +150,12 @@ body {
 }
 
 .faq-item {
+    color: #8E1616;
     margin-bottom: 20px;
 }
 
 .faq-item h3 {
+    color: #8E1616;
     font-weight: 600;
     margin-bottom: 5px;
 }
@@ -166,6 +169,7 @@ body {
 }
 
 .team h2 {
+    font-family: "Libre Baskerville", serif;
     font-size: 2em;
     margin-bottom: 40px;
 }
