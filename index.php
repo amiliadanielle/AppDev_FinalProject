@@ -20,7 +20,7 @@
 
             <div class="nav-links">
                 <a href="pages/about.php" class="about-link">About Us</a>
-                <a href="login.php" class="login-link">
+                <a href="pages/login.php" class="login-link">
                     <span class="material-symbols-outlined">person</span> Log In
                 </a>
             </div>
