@@ -45,36 +45,44 @@
                 <div class="faq-item">
                     <h3>What time is check-in and check-out?</h3>
                     <p>Check-in starts at 2:00 PM, and check-out is until 12:00 PM. Early check-in and late check-out are subject to availability.</p>
+                    <hr>
                 </div>
                 <div class="faq-item">
                     <h3>Do you offer airport transfers?</h3>
                     <p>Yes, we offer airport transfer services upon request. Please contact us at least 24 hours before your arrival to arrange transportation.</p>
+                    <hr>
                 </div>
                 <div class="faq-item">
                     <h3>Is Wi-Fi available at the hotel?</h3>
                     <p>Absolutely. Complimentary high-speed Wi-Fi is available throughout the hotel premises.</p>
+                    <hr>
                 </div>
                 <div class="faq-item">
                     <h3>Are pets allowed?</h3>
                     <p>Unfortunately, pets are not allowed at Juno Hotel to ensure the comfort of all our guests.</p>
+                    <hr>
                 </div>
             </div>
             <div class="faq-column">
                 <div class="faq-item">
-                    <h3>Do you have parking facilities?</h3>
-                    <p>Yes, we offer secure on-site parking for hotel guests, free of charge.</p>
+                    <h3>Do you have facilities for guests with disabilities?</h3>
+                    <p>Yes, Juno Hotel is equipped with accessible rooms and facilities to ensure a comfortable stay for all guests.</p>
+                    <hr>
                 </div>
                 <div class="faq-item">
                     <h3>Can I cancel or modify my reservation?</h3>
                     <p>Yes, reservations can be modified or canceled based on the terms of your booking. Please refer to your confirmation email or contact our reservations team.</p>
+                    <hr>
                 </div>
                 <div class="faq-item">
                     <h3>Is breakfast included in the room rate?</h3>
                     <p>Select room packages include breakfast. You may confirm this during booking or inquire at the front desk upon arrival.</p>
+                    <hr>
                 </div>
                 <div class="faq-item">
-                    <h3>Do you have facilities for guests with disabilities?</h3>
-                    <p>Yes, Juno Hotel is equipped with accessible rooms and facilities to ensure a comfortable stay for all guests.</p>
+                    <h3>Do you have parking facilities?</h3>
+                    <p>Yes, we offer secure on-site parking for hotel guests, free of charge.</p>
+                    <hr>
                 </div>
             </div>
         </div>
@@ -94,7 +102,7 @@
             </div>
             <div class="member">
                 <img src="../assets/images/team3.jpg" alt="Aothan Rigor">
-                <p>Aothan Rigor</p>
+                <p>Aethan Rigor</p>
             </div>
             <div class="member">
                 <img src="../assets/images/team4.jpg" alt="Amilla Tanajura">
