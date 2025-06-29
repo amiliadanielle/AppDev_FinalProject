@@ -36,29 +36,32 @@ body {
 }
 
 .login-link {
-    color: white;
-    text-decoration: none;
-    padding-right: 150px;
-    display: flex;
-    align-items: center;
-    gap: 8px; 
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: white;
+  padding-right: 150px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .login-link:hover {
-    color: #8E1616;
-    opacity: 0.9;
+  color: #8E1616; 
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24;
-    font-size: 24px;
+.login-link:hover .material-symbols-outlined {
+  color: #8E1616; 
+  transform: scale(1.1); 
+  transition: transform 0.3s ease, color 0.3s ease;
 }
+
+
+.material-symbols-outlined {
+  vertical-align: middle;
+  font-size: 30px;
+}
+
 
 .nav-links {
     display: flex;
