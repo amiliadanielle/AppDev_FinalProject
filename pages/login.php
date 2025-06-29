@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Log In Page</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/logo.png">
     <link rel="stylesheet" href="../assets/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
