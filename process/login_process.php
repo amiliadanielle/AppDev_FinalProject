@@ -1,46 +1,41 @@
 <?php
 session_start();
+require_once("../includes/db.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["login"])) {
-    $username_email = $_POST["username_email"];
+    $input = trim($_POST["email_or_username"]);
     $password = $_POST["password"];
 
-    // DB connection
-    require_once("../includes/db.php");
-
-    // Check user by username or email
+    // Check if input exists in DB
     $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
-    $stmt->bind_param("ss", $username_email, $username_email);
+    $stmt->bind_param("ss", $input, $input);
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($user = $result->fetch_assoc()) {
-        if (password_verify($password, $user['password'])) {
-            // Login successful
+    if ($result && $result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+
+        // Check password correctly
+        if (password_verify($password, $user["password"])) {
+            // Save session only if password is correct
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["username"] = $user["username"];
             $_SESSION["role"] = $user["role"];
-
-            // Redirect based on role
-            if ($user['role'] === 'admin') {
-                header("Location: ../pages/admin/dashboard.php");
-            } else {
-                header("Location: ../pages/profile.php");
-            }
+            
+            // Redirect to homepage
+            header("Location: ../index.php");
             exit;
         } else {
-            $_SESSION["login_error"] = "Invalid password.";
+            $_SESSION["login_error"] = "Incorrect password.";
+            header("Location: ../pages/login.php");
+            exit;
         }
     } else {
-        $_SESSION["login_error"] = "User not found.";
+        $_SESSION["login_error"] = "No account found with that username or email.";
+        header("Location: ../pages/login.php");
+        exit;
     }
-
-    // Redirect back to login page with error
-    header("Location: ../pages/login.php");
-    exit;
 } else {
-    // If accessed directly without POST
     header("Location: ../pages/login.php");
     exit;
 }
-?>
