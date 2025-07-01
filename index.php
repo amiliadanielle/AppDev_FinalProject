@@ -11,38 +11,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-    <style>
-        .material-symbols-outlined {
-            vertical-align: middle;
-            font-size: 22px;
-        }
-    </style>
 </head>
 <body>
 
 <header class="hero" id="about">
     <div class="topbar" id="navbar">
-        <a href="index.php">
-            <img src="assets/images/logo.png" alt="Juno Logo" class="logo">
-        </a>
+    <a href="index.php">
+        <img src="assets/images/logo.png" alt="Juno Logo" class="logo">
+    </a>
 
-        <div class="nav-links">
+    <div class="nav-links">
+        <a href="pages/about.php" class="about-link">About Us</a>
 
-            <?php if (isset($_SESSION["username"])): ?>
-                <span class="nav-username" style="color: white; font-weight: 500;">
-                    Hello, <?= htmlspecialchars($_SESSION["username"]) ?>
-                </span>
-                <a href="pages/booking.php" class="about-link">Book</a>
-                <a href="process/logout.php" class="login-link">
-                    <span class="material-symbols-outlined">account_circle</span> Log Out
-                </a>
-            <?php else: ?>
-                <a href="pages/login.php" class="login-link">
-                    <span class="material-symbols-outlined">account_circle</span> Log In
-                </a>
-            <?php endif; ?>
+         <?php if (isset($_SESSION["username"])): ?>
+    <span class="nav-username" style="color: white; font-weight: 500;">
+        Hello, <?= htmlspecialchars($_SESSION["username"]) ?>
+    </span>
+
+    <div class="profile-dropdown">
+        <span class="material-symbols-outlined profile-icon">account_circle</span>
+        <div class="profile-dropdown-content">
+            <a href="pages/profile.php">Profile Settings</a>
+            <a href="pages/booking.php">My Bookings</a>
+            <a href="process/logout.php">Log Out</a>
         </div>
     </div>
+<?php else: ?>
+    <a href="pages/login.php" class="login-link">
+        <span class="material-symbols-outlined">account_circle</span> Log In
+    </a>
+<?php endif; ?>
+
+    </div>
+</div>
 
     <div class="hero-text">
         <section class="reveal">

@@ -105,6 +105,51 @@ body {
     opacity: 0.9;
 }
 
+.profile-dropdown {
+    padding-right: 150px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-icon {
+    font-size: 28px;
+    color: white;
+    padding: 5px;
+    transition: 0.3s ease;
+}
+
+.profile-dropdown-content {
+    
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 100px;
+    box-shadow: 0 8px 16px rgba(35, 17, 17, 0.2);
+    z-index: 10;
+    right: 8;
+    top: 120%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.profile-dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.profile-dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.profile-dropdown:hover .profile-dropdown-content {
+    display: block;
+}
+
+
 
 /* Hero Section */
 .hero {
