@@ -28,14 +28,17 @@
         Hello, <?= htmlspecialchars($_SESSION["username"]) ?>
     </span>
 
-    <div class="profile-dropdown">
-        <span class="material-symbols-outlined profile-icon">account_circle</span>
-        <div class="profile-dropdown-content">
-            <a href="pages/profile.php">Profile Settings</a>
-            <a href="pages/booking.php">My Bookings</a>
-            <a href="process/logout.php">Log Out</a>
-        </div>
+     <div class="profile-dropdown">
+    <button class="profile-btn" id="profileToggle">
+        <span class="material-symbols-outlined">account_circle</span>
+    </button>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="/pages/profile.php">Profile Settings</a>
+        <a href="/pages/booking.php">My Bookings</a>
+        <a href="process/logout.php">Log Out</a>
     </div>
+</div>
+
 <?php else: ?>
     <a href="pages/login.php" class="login-link">
         <span class="material-symbols-outlined">account_circle</span> Log In
