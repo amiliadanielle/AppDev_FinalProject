@@ -102,7 +102,7 @@
                 <p>Hilary Pagadora</p>
             </div>
             <div class="member">
-                <img src="../assets/images/team3.jpg" alt="Aothan Rigor">
+                <img src="../assets/images/team3.jpg" alt="Aethan Rigor">
                 <p>Aethan Rigor</p>
             </div>
             <div class="member">
