@@ -92,7 +92,6 @@ body {
 }
 
 
-
 .about-link {
     color: white;
     text-decoration: none;
@@ -136,7 +135,7 @@ body {
     display: none;
     position: absolute;
     top: 35px;
-    right: 0;
+    right: 8;
     background-color: #fff;
     min-width: 160px;
     border-radius: 6px;
