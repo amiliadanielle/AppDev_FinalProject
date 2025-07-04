@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,34 +10,43 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 </head>
 <body>
 
 <header class="hero" id="about">
     <div class="topbar" id="navbar">
-        <a href="index.php">
-            <img src="assets/images/logo.png" alt="Juno Logo" class="logo">
-        </a>
+    <a href="index.php">
+        <img src="assets/images/logo.png" alt="Juno Logo" class="logo">
+    </a>
 
-        <div class="nav-links">
-            <a href="pages/about.php" class="about-link">About Us</a>
+    <div class="nav-links">
+        <a href="pages/about.php" class="about-link">About Us</a>
 
-            <?php if (isset($_SESSION["username"])): ?>
-                <span class="nav-username" style="color: white; font-weight: 500;">
-                    Hello, <?= htmlspecialchars($_SESSION["username"]) ?>
-                </span>
-                <a href="pages/booking.php" class="about-link">Book</a>
-                <a href="process/logout.php" class="login-link">
-                    <span class="material-symbols-outlined">person</span> Log Out
-                </a>
-            <?php else: ?>
-                <a href="pages/login.php" class="login-link">
-                    <span class="material-symbols-outlined">person</span> Log In
-                </a>
-            <?php endif; ?>
-        </div>
+         <?php if (isset($_SESSION["username"])): ?>
+    <span class="nav-username" style="color: white; font-weight: 500;">
+        Hello, <?= htmlspecialchars($_SESSION["username"]) ?>
+    </span>
+
+     <div class="profile-dropdown">
+    <button class="profile-btn" id="profileToggle">
+        <span class="material-symbols-outlined">account_circle</span>
+    </button>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="/pages/profile.php">Profile Settings</a>
+        <a href="/pages/booking.php">My Bookings</a>
+        <a href="process/logout.php">Log Out</a>
     </div>
+</div>
+
+<?php else: ?>
+    <a href="pages/login.php" class="login-link">
+        <span class="material-symbols-outlined">account_circle</span> Log In
+    </a>
+<?php endif; ?>
+
+    </div>
+</div>
 
     <div class="hero-text">
         <section class="reveal">

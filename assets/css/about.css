@@ -67,6 +67,15 @@ html {
     padding-right: 10px;
 }
 
+.nav-username {
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .home-link {
     color: white;
     text-decoration: none;
@@ -78,6 +87,58 @@ html {
     color: #8E1616;
 }
 
+.profile-dropdown {
+    padding-right: 150px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile-btn {
+    font-size: 28px;
+    color: white;
+    padding: 5px;
+    transition: 0.3s ease;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 8;
+    background-color: #fff;
+    min-width: 160px;
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    color: #841c1c;
+    background-color: #f5efdf;
+}
 
 
 /* Hero Section */
