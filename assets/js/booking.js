@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // (7) Send booking data to server via AJAX
 		// pwede nyo baguhin tong part into pages/admin/ kayo na bahala (i just used api folder as an example)
 		//Check that save_booking.php actually sets  $_SESSION['booking_data']  or your sidebar will always default to "No room selected"
-        fetch('../api/save_booking.php', {
+        fetch('../process/save_booking.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

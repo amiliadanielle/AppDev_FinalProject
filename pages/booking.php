@@ -29,7 +29,19 @@
     }
 
     // (2) Fetch room data from database
-    $sql = "SELECT * FROM rooms WHERE is_active = 1";
+    $sql = "SELECT 
+            room_type,
+            MIN(id) AS id,
+            MIN(room_number) AS room_number,
+            MIN(description) AS description,
+            MIN(price) AS price,
+            MIN(image) AS image,
+            COUNT(*) AS available_rooms,
+            MAX(status) AS status
+        FROM rooms
+        WHERE status = 'available'
+        GROUP BY room_type
+        LIMIT 5";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -109,15 +121,15 @@
                     if ($rooms): 
                         foreach ($rooms as $room): 
                     ?>
-                    <div class="room-card" data-room-type="<?php echo strtolower($room['room_type']); ?>" data-price="<?php echo $room['price']; ?>" data-capacity="<?php echo $room['max_guests']; ?>">
+                    <div class="room-card" data-room-type="<?php echo strtolower($room['room_type']); ?>" data-price="<?php echo $room['price']; ?>">
                         <div class="room-image">
-                            <img src="<?php echo $room['image_url']; ?>" alt="<?php echo htmlspecialchars($room['room_name']); ?>">
+                            <img src="../assets/images/<?php echo $room['image']; ?>" alt="<?php echo htmlspecialchars($room['room_type']); ?>">
                         </div>
                         <div class="room-details">
-                            <h3><?php echo htmlspecialchars($room['room_name']); ?></h3>
+                            <h3><?php echo htmlspecialchars($room['room_type']); ?></h3>
                             <div class="room-info">
-                                <span class="room-size"><?php echo $room['size']; ?> SQM</span>
-                                <span class="room-capacity">Sleeps <?php echo $room['max_guests']; ?></span>
+                                <span class="room-size">-- SQM</span> 
+                                <span class="room-capacity">Sleeps --</span> 
                             </div>
                             <p class="room-description">
                                 <?php echo htmlspecialchars($room['description']); ?>
@@ -128,14 +140,14 @@
                             </div>
                         </div>
                         <div class="room-pricing">
-                            <div class="price-info">
+                            <div class="price-info">    
                                 <span class="starting-from">Starting from</span>
                                 <span class="price">₱<?php echo number_format($room['price']); ?></span>
                                 <span class="per-night">Daily <?php echo $room['available_rooms']; ?> room available</span>
                             </div>
                         </div>
                     </div>
-                    <?php 
+                 <?php 
                         endforeach; 
                     else: 
                     ?>
