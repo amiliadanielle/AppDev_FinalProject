@@ -1,4 +1,10 @@
 <?php
+// Start session for access to user session data
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Database credentials
 $host = "localhost";
 $dbname = "juno_hotel_db";
 $username = "root";
