@@ -203,5 +203,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><a href="#faqs">FAQs</a></p>
         </div>
     </footer>
+     <script src="../assets/js/booking.js"></script>
 </body>
 </html>
