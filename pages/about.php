@@ -114,11 +114,11 @@
     <h2>Our Team</h2>
     <div class="team-members">
         <div class="member">
-            <img src="../assets/images/team1.jpg" alt="Daniel Ling">
+            <img src="../assets/images/daniel.jpg" alt="Daniel Ling">
             <p>Daniel Ling</p>
         </div>
         <div class="member">
-            <img src="../assets/images/team2.jpg" alt="Hilary Pagadora">
+            <img src="../assets/images/ashley.jpeg" alt="Hilary Pagadora">
             <p>Hilary Pagadora</p>
         </div>
         <div class="member">
@@ -126,7 +126,7 @@
             <p>Aethan Rigor</p>
         </div>
         <div class="member">
-            <img src="../assets/images/team4.jpg" alt="Amilla Tanajura">
+            <img src="../assets/images/profile.png" alt="Amilla Tanajura">
             <p>Amilla Tanajura</p>
         </div>
     </div>
