@@ -168,7 +168,6 @@ $reservation = [
     <div class="payment-icons">
       <img src="../assets/images/visa.png" alt="Visa">
       <img src="../assets/images/mastercard.png" alt="Mastercard">
-      <img src="../assets/images/amex.png" alt="Amex">
       <img src="../assets/images/jcb.jpeg" alt="JCB">
       <img src="../assets/images/paypal.png" alt="PayPal">
     </div>
