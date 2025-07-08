@@ -91,13 +91,25 @@ $reservation = [
   <!-- Left: Reservation Summary -->
   <div class="card reservation">
     <h2>Your Reservation</h2>
-    <div class="info-item"><span class="info-label">Transaction ID:</span><br><?= $reservation['transaction_id'] ?></div>
+    <div class="info-item" style="flex-direction: column; align-items: flex-start;">
+  <span class="info-label">Transaction ID:</span>
+  <span class="info-value" style="text-align: left; width: 100%;"><?= $reservation['transaction_id'] ?></span>
+    </div>
+
     <div class="info-item"><strong><?= $reservation['room'] ?></strong></div>
     <div class="info-item"><span class="info-label">Check In:</span> <?= $reservation['checkin'] ?></div>
     <div class="info-item"><span class="info-label">Check Out:</span> <?= $reservation['checkout'] ?></div>
     <div class="info-item"><span class="info-label">Guests:</span> <?= $reservation['guests'] ?></div>
     <div class="info-item"><span class="info-label">Services:</span> <?= $reservation['services'] ?> <br>PHP <?= $reservation['service_price'] ?></div>
-    <div class="info-item"><span class="info-label">Total Amount:</span><br><strong>PHP <?= number_format($reservation['total']) ?></strong></div>
+    <!-- Divider before Total -->
+<div class="divider"></div>
+
+<!-- Total at the bottom -->
+<div class="info-item" style="margin-top: 15px;">
+  <span class="info-label">Total Amount:</span><br>
+  <strong>PHP <?= number_format($reservation['total']) ?></strong>
+</div>
+
   </div>
 
   <!-- Right: Contact & Payment Form -->
@@ -157,7 +169,7 @@ $reservation = [
       <img src="../assets/images/visa.png" alt="Visa">
       <img src="../assets/images/mastercard.png" alt="Mastercard">
       <img src="../assets/images/amex.png" alt="Amex">
-      <img src="../assets/images/jcb.png" alt="JCB">
+      <img src="../assets/images/jcb.jpeg" alt="JCB">
       <img src="../assets/images/paypal.png" alt="PayPal">
     </div>
 
