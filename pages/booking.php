@@ -345,7 +345,7 @@
                                 <h4>Best Price Guarantee</h4>
                                 <p>We guarantee you won't find a better price for these dates and room type. If you find a lower price, we'll match it and give you our best publicly available rate.</p>
                             </div>
-                            <button class="continue-payment-btn">Continue to Payment →</button>
+                            <a href="../pages/payment.php" class="continue-payment-btn">Continue to Payment →</a>
                         </div>
                     </div>
                 </div>
