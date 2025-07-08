@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $userId = $_SESSION['user_id'];
 $email = "";
 
-// Get email from `users` table
+// Get email from users table
 $query = $conn->prepare("SELECT email FROM users WHERE id = ?");
 $query->bind_param("i", $userId);
 $query->execute();
@@ -24,8 +24,8 @@ $title = $firstName = $middleName = $lastName = $nationality = $dob = $gender = 
 $address1 = $address2 = $address3 = $city = $zip = $country = "";
 
 // Check if profile already exists
-$checkProfile = $conn->prepare("SELECT * FROM user_profiles WHERE email = ?");
-$checkProfile->bind_param("s", $email);
+$checkProfile = $conn->prepare("SELECT * FROM user_profiles WHERE user_id = ?");
+$checkProfile->bind_param("i", $userId);
 $checkProfile->execute();
 $result = $checkProfile->get_result();
 if ($result && $result->num_rows > 0) {
@@ -62,25 +62,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $zip = $_POST['zip'] ?? '';
     $country = $_POST['country'] ?? '';
 
-    // If profile already exists, update
-    $check = $conn->prepare("SELECT id FROM user_profiles WHERE email = ?");
-    $check->bind_param("s", $email);
+    // Check if profile already exists
+    $check = $conn->prepare("SELECT id FROM user_profiles WHERE user_id = ?");
+    $check->bind_param("i", $userId);
     $check->execute();
     $check->store_result();
 
     if ($check->num_rows > 0) {
+        // Update existing profile
         $stmt = $conn->prepare("UPDATE user_profiles SET 
             title=?, first_name=?, middle_name=?, last_name=?, nationality=?, dob=?, gender=?, 
             address1=?, address2=?, address3=?, city=?, zip=?, country=?
-            WHERE email=?");
-        $stmt->bind_param("ssssssssssssss", $title, $firstName, $middleName, $lastName, $nationality, $dob, $gender,
-            $address1, $address2, $address3, $city, $zip, $country, $email);
+            WHERE user_id=?");
+        $stmt->bind_param("sssssssssssssi", $title, $firstName, $middleName, $lastName, $nationality, $dob, $gender,
+            $address1, $address2, $address3, $city, $zip, $country, $userId);
     } else {
-        // If no profile yet, insert new
+        // Insert new profile
         $stmt = $conn->prepare("INSERT INTO user_profiles 
-            (title, first_name, middle_name, last_name, nationality, email, dob, gender, address1, address2, address3, city, zip, country) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssssssssssss", $title, $firstName, $middleName, $lastName, $nationality, $email, $dob, $gender,
+            (user_id, title, first_name, middle_name, last_name, nationality, email, dob, gender, address1, address2, address3, city, zip, country) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("issssssssssssss", $userId, $title, $firstName, $middleName, $lastName, $nationality, $email, $dob, $gender,
             $address1, $address2, $address3, $city, $zip, $country);
     }
 
@@ -94,7 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -106,103 +106,101 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="hero" id="about">
-        <div class="topbar" id="navbar">
-            <a href="../index.php"><img src="../assets/images/logo.png" alt="Juno Logo" class="logo"></a>
-            <div class="nav-links">
-                <a href="../index.php" class="about-link">Home</a>
-                <a href="../pages/about.php" class="contact-link">About Us</a>
-            </div>
+<header class="hero" id="about">
+    <div class="topbar" id="navbar">
+        <a href="../index.php"><img src="../assets/images/logo.png" alt="Juno Logo" class="logo"></a>
+        <div class="nav-links">
+            <a href="../index.php" class="about-link">Home</a>
+            <a href="../pages/about.php" class="contact-link">About Us</a>
         </div>
-    </header>
+    </div>
+</header>
 
-    <h1>A Place to Update Your Details</h1>
-    <p>All fields are mandatory unless stated otherwise.</p>
+<h1>A Place to Update Your Details</h1>
+<p>All fields are mandatory unless stated otherwise.</p>
 
-    <form method="POST" action="">
-        <h2>Personal Information</h2>
-        <div class="form-section">
-            <div>
-                <label for="title">Title (Optional)</label>
-                <select name="title" id="title">
-                    <option value="">Select</option>
-                    <option value="Mr" <?= ($title == "Mr") ? "selected" : "" ?>>Mr.</option>
-                    <option value="Ms" <?= ($title == "Ms") ? "selected" : "" ?>>Ms.</option>
-                    <option value="Mrs" <?= ($title == "Mrs") ? "selected" : "" ?>>Mrs.</option>
-                </select>
+<form method="POST" action="">
+    <h2>Personal Information</h2>
+    <div class="form-section">
+        <div>
+            <label for="title">Title (Optional)</label>
+            <select name="title" id="title">
+                <option value="">Select</option>
+                <option value="Mr" <?= ($title == "Mr") ? "selected" : "" ?>>Mr.</option>
+                <option value="Ms" <?= ($title == "Ms") ? "selected" : "" ?>>Ms.</option>
+                <option value="Mrs" <?= ($title == "Mrs") ? "selected" : "" ?>>Mrs.</option>
+            </select>
 
-                <label for="middle_name">Middle Name (Optional)</label>
-                <input type="text" name="middle_name" id="middle_name" value="<?= htmlspecialchars($middleName) ?>">
+            <label for="middle_name">Middle Name (Optional)</label>
+            <input type="text" name="middle_name" id="middle_name" value="<?= htmlspecialchars($middleName) ?>">
 
-                <label for="nationality">Nationality (Optional)</label>
-                <input type="text" name="nationality" id="nationality" value="<?= htmlspecialchars($nationality) ?>">
+            <label for="nationality">Nationality (Optional)</label>
+            <input type="text" name="nationality" id="nationality" value="<?= htmlspecialchars($nationality) ?>">
 
-                <label for="dob">Date of Birth (Optional)</label>
-                <input type="date" name="dob" id="dob" value="<?= htmlspecialchars($dob) ?>">
-            </div>
-
-            <div>
-                <label for="first_name">First Name</label>
-                <input type="text" name="first_name" id="first_name" required value="<?= htmlspecialchars($firstName) ?>">
-
-                <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" id="last_name" required value="<?= htmlspecialchars($lastName) ?>">
-
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" required value="<?= htmlspecialchars($email) ?>" readonly>
-
-
-
-                <label for="gender">Gender (Optional)</label>
-                <select name="gender" id="gender">
-                    <option value="">Select</option>
-                    <option value="Male" <?= ($gender == "Male") ? "selected" : "" ?>>Male</option>
-                    <option value="Female" <?= ($gender == "Female") ? "selected" : "" ?>>Female</option>
-                    <option value="Other" <?= ($gender == "Other") ? "selected" : "" ?>>Other</option>
-                </select>
-            </div>
+            <label for="dob">Date of Birth (Optional)</label>
+            <input type="date" name="dob" id="dob" value="<?= htmlspecialchars($dob) ?>">
         </div>
 
-        <h2>Address Information</h2>
-        <div class="form-section">
-            <div>
-                <label for="address1">Address Line 1 (Optional)</label>
-                <input type="text" name="address1" id="address1" value="<?= htmlspecialchars($address1) ?>">
+        <div>
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name" required value="<?= htmlspecialchars($firstName) ?>">
 
-                <label for="address3">Address Line 3 (Optional)</label>
-                <input type="text" name="address3" id="address3" value="<?= htmlspecialchars($address3) ?>">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" required value="<?= htmlspecialchars($lastName) ?>">
 
-                <label for="zip">ZIP / Post Code (Optional)</label>
-                <input type="text" name="zip" id="zip" value="<?= htmlspecialchars($zip) ?>">
-            </div>
-            <div>
-                <label for="address2">Address Line 2 (Optional)</label>
-                <input type="text" name="address2" id="address2" value="<?= htmlspecialchars($address2) ?>">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required value="<?= htmlspecialchars($email) ?>" readonly>
 
-                <label for="city">City (Optional)</label>
-                <input type="text" name="city" id="city" value="<?= htmlspecialchars($city) ?>">
-
-                <label for="country">Country of Residence</label>
-                <input type="text" name="country" id="country" required value="<?= htmlspecialchars($country) ?>">
-            </div>
+            <label for="gender">Gender (Optional)</label>
+            <select name="gender" id="gender">
+                <option value="">Select</option>
+                <option value="Male" <?= ($gender == "Male") ? "selected" : "" ?>>Male</option>
+                <option value="Female" <?= ($gender == "Female") ? "selected" : "" ?>>Female</option>
+                <option value="Other" <?= ($gender == "Other") ? "selected" : "" ?>>Other</option>
+            </select>
         </div>
+    </div>
 
-        <button type="submit">Save</button>
-    </form>
+    <h2>Address Information</h2>
+    <div class="form-section">
+        <div>
+            <label for="address1">Address Line 1 (Optional)</label>
+            <input type="text" name="address1" id="address1" value="<?= htmlspecialchars($address1) ?>">
 
-    <footer>
-        <div class="footer-left">
-            <img src="../assets/images/junologo.png" alt="Juno Footer Logo">
-            <p>© 2025 Juno Hotel. All rights reserved.</p>
+            <label for="address3">Address Line 3 (Optional)</label>
+            <input type="text" name="address3" id="address3" value="<?= htmlspecialchars($address3) ?>">
+
+            <label for="zip">ZIP / Post Code (Optional)</label>
+            <input type="text" name="zip" id="zip" value="<?= htmlspecialchars($zip) ?>">
         </div>
-        <div class="footer-right">
-            <p><a href="#">Contact Us</a></p>
-            <p>📞 <u><a href="tel:+63281234567">(02) 8123 4567</a></u></p>
-            <p>✉️ <u><a href="mailto:info@junohotel.com">info@junohotel.com</a></u></p>
-            <p><a href="#about">About Us</a></p>
-            <p><a href="#faqs">FAQs</a></p>
+        <div>
+            <label for="address2">Address Line 2 (Optional)</label>
+            <input type="text" name="address2" id="address2" value="<?= htmlspecialchars($address2) ?>">
+
+            <label for="city">City (Optional)</label>
+            <input type="text" name="city" id="city" value="<?= htmlspecialchars($city) ?>">
+
+            <label for="country">Country of Residence</label>
+            <input type="text" name="country" id="country" required value="<?= htmlspecialchars($country) ?>">
         </div>
-    </footer>
-     <script src="../assets/js/booking.js"></script>
+    </div>
+
+    <button type="submit">Save</button>
+</form>
+
+<footer>
+    <div class="footer-left">
+        <img src="../assets/images/junologo.png" alt="Juno Footer Logo">
+        <p>© 2025 Juno Hotel. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+        <p><a href="#">Contact Us</a></p>
+        <p>📞 <u><a href="tel:+63281234567">(02) 8123 4567</a></u></p>
+        <p>✉️ <u><a href="mailto:info@junohotel.com">info@junohotel.com</a></u></p>
+        <p><a href="#about">About Us</a></p>
+        <p><a href="#faqs">FAQs</a></p>
+    </div>
+</footer>
+<script src="../assets/js/booking.js"></script>
 </body>
 </html>
