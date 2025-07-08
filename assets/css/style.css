@@ -139,7 +139,7 @@ body {
     background-color: #fff;
     min-width: 160px;
     border-radius: 6px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(255, 96, 96, 0.2);
     z-index: 1;
     flex-direction: column;
 }
@@ -155,7 +155,6 @@ body {
 .dropdown-menu a:hover {
     background-color: #f5efdf;
 }
-
 
 
 
@@ -183,9 +182,9 @@ body {
     z-index: 1;
     max-width: 600px;
     padding: 10px;
-    margin-top: 60px;
+    margin-top: 55px;
     padding-left: 90px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 
@@ -252,7 +251,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding-top: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 20px;
 }
 
 .facility-img {
@@ -317,6 +316,33 @@ body {
 .facility-card.cafe {
     background-image: url('../images/cafe.jpg');
 }
+
+.see-more-wrapper {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+
+.see-more-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background-color: #8e1616;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.see-more-btn:hover {
+  background-color: #c69c2b;
+  color: #1e1e1e;
+  transform: scale(1.05);
+}
+
 
 
 /* Mission & Vision */

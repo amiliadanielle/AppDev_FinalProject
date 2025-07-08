@@ -92,8 +92,12 @@
                     <h3>Café</h3>
                     <p>Savor artisanal flavors at our cozy café, serving freshly brewed coffee, gourmet pastries, and light bites in a stylish, welcoming setting.</p>
                 </div>
-            </div>
+            </div>     
         </div>
+        <div class="see-more-wrapper">
+  <a href="pages/facilities.php" class="see-more-btn">See More Facilities</a>
+</div>
+
     </section>
 </section>
 
