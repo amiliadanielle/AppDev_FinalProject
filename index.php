@@ -33,8 +33,8 @@
         <span class="material-symbols-outlined">account_circle</span>
     </button>
     <div class="dropdown-menu" id="dropdownMenu">
-        <a href="/pages/profile.php">Profile Settings</a>
-        <a href="/pages/booking.php">My Bookings</a>
+        <a href="pages/profile.php">Profile Settings</a>
+        <a href="pages/booking.php">My Bookings</a>
         <a href="process/logout.php">Log Out</a>
     </div>
 </div>
